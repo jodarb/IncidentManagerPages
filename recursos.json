@@ -15,6 +15,14 @@
         { "titulo": "Adjunto enviado por ByteHorizon CoreSwift", "url": "https://pub-d38a173e4f434750bf433e36bf7e9eef.r2.dev/CasoPractico/informe1.docx" }
         { "titulo": "Organigrama CoreSwift", "url": "https://pub-d38a173e4f434750bf433e36bf7e9eef.r2.dev/CasoPractico/OrganigramaCoreSwift.png" }
       ]
+    },
+        {
+      "subseccion": "✅ Resolución",
+      "descripcion": "Un ejemplo de resolución por el profesor",
+      "enlaces": [
+        { "titulo": "Ejecicio 1: Respuesta a CoreSwift", "url": "https://pub-d38a173e4f434750bf433e36bf7e9eef.r2.dev/CasoPractico/Respuestas/respuesta1.html" }
+        { "titulo": "Ejecicio 1: Brief inicial a ByteHorizon", "url": "https://pub-d38a173e4f434750bf433e36bf7e9eef.r2.dev/CasoPractico/Respuestas/respuesta2.html" }
+      ]
     }
   ],
   "ctfs": [
