@@ -3,8 +3,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>IncidentManager Pages - Introducción a la Respuesta ante Incidentes</title>
+    <title>IncidentManager Pages - Introducción a la respuesta ante incidentes</title>
+    <link rel="icon" type="image/png" href="img/favicon.png">
     <style>
+        /* Variables de color por defecto (Modo Oscuro) */
         :root {
             --bg-color: #0f172a;
             --card-bg: #1e293b;
@@ -12,6 +14,18 @@
             --text-muted: #94a3b8;
             --accent-color: #38bdf8;
             --border-color: #334155;
+            --card-title: #ffffff;
+        }
+
+        /* Variables de color (Modo Claro) */
+        [data-theme="light"] {
+            --bg-color: #f8fafc;
+            --card-bg: #ffffff;
+            --text-color: #0f172a;
+            --text-muted: #475569;
+            --accent-color: #0284c7;
+            --border-color: #e2e8f0;
+            --card-title: #0f172a;
         }
 
         body {
@@ -21,12 +35,40 @@
             line-height: 1.6;
             margin: 0;
             padding: 0;
+            transition: background-color 0.3s, color 0.3s;
         }
 
         header {
             border-bottom: 1px solid var(--border-color);
-            padding: 2rem 1rem;
+            padding: 2.5rem 1rem;
             text-align: center;
+            position: relative;
+        }
+
+        /* Contenedor del Botón de Modo Claro / Oscuro */
+        .theme-toggle-container {
+            position: absolute;
+            top: 1rem;
+            right: 1rem;
+        }
+
+        .theme-toggle-btn {
+            background-color: var(--card-bg);
+            border: 1px solid var(--border-color);
+            color: var(--text-color);
+            padding: 0.5rem 1rem;
+            border-radius: 20px;
+            cursor: pointer;
+            font-size: 0.9rem;
+            font-weight: 500;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            transition: background-color 0.2s, border-color 0.2s;
+        }
+
+        .theme-toggle-btn:hover {
+            border-color: var(--accent-color);
         }
 
         .container {
@@ -38,7 +80,7 @@
         h1 {
             color: var(--accent-color);
             margin: 0 0 0.5rem 0;
-            font-size: 2.5rem;
+            font-size: 2.3rem;
         }
 
         .subtitle {
@@ -47,11 +89,19 @@
             margin: 0;
         }
 
+        .section-title {
+            color: var(--accent-color);
+            border-bottom: 2px solid var(--border-color);
+            padding-bottom: 0.5rem;
+            margin-top: 3rem;
+            font-size: 1.8rem;
+        }
+
         .grid {
             display: grid;
             grid-template-columns: 1fr;
             gap: 1.5rem;
-            margin-top: 2rem;
+            margin-top: 1.5rem;
         }
 
         @media (min-width: 768px) {
@@ -65,7 +115,7 @@
             border: 1px solid var(--border-color);
             border-radius: 8px;
             padding: 1.5rem;
-            transition: transform 0.2s, border-color 0.2s;
+            transition: transform 0.2s, border-color 0.2s, background-color 0.3s;
         }
 
         .card:hover {
@@ -73,16 +123,25 @@
             border-color: var(--accent-color);
         }
 
-        .card h2 {
-            color: var(--accent-color);
+        .card h3 {
+            color: var(--card-title);
             margin-top: 0;
             font-size: 1.3rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .card p {
+            color: var(--text-muted);
+            font-size: 0.95rem;
+            margin: 0.5rem 0 1rem 0;
         }
 
         .resource-list {
             list-style: none;
             padding: 0;
-            margin: 1rem 0 0 0;
+            margin: 0;
         }
 
         .resource-list li {
@@ -90,20 +149,20 @@
         }
 
         .resource-list a {
-            color: var(--text-color);
+            color: var(--accent-color);
             text-decoration: none;
-            display: flex;
+            display: inline-flex;
             align-items: center;
+            font-weight: 500;
         }
 
         .resource-list a:hover {
-            color: var(--accent-color);
+            text-decoration: underline;
         }
 
         .resource-list a::before {
-            content: "🔗";
+            content: "→";
             margin-right: 0.5rem;
-            font-size: 0.9rem;
         }
 
         footer {
@@ -112,59 +171,61 @@
             color: var(--text-muted);
             font-size: 0.9rem;
             border-top: 1px solid var(--border-color);
-            margin-top: 4rem;
+            margin-top: 5rem;
         }
     </style>
 </head>
 <body>
 
     <header>
+        <div class="theme-toggle-container">
+            <button class="theme-toggle-btn" id="theme-toggle" aria-label="Cambiar modo de color">
+                <span id="theme-icon">☀️</span> <span id="theme-text">Modo Claro</span>
+            </button>
+        </div>
         <h1>IncidentManager Pages</h1>
-        <p class="subtitle">Asignatura: Introducción a la Respuesta ante Incidentes</p>
+        <p class="subtitle">Introducción a la respuesta ante incidentes</p>
     </header>
 
     <div class="container">
-        <p>Bienvenidos al repositorio central de recursos de la asignatura. Aquí encontraréis las diapositivas, las guías de los laboratorios prácticos y las hojas de referencia necesarias para el seguimiento de las clases del Máster en Ciberseguridad.</p>
+        <p>Espacio centralizado de recursos, documentación y despliegue de entornos prácticos para el seguimiento de la asignatura.</p>
 
+        <!-- SECCIÓN: CASO PRÁCTICO -->
+        <h2 class="section-title">📂 Caso práctico</h2>
         <div class="grid">
-            <!-- Bloque: Temario -->
             <div class="card">
-                <h2>📚 Material de Clase</h2>
+                <h3>📝 Enunciado y Contexto</h3>
+                <p>Descripción del escenario de compromiso, alcance de la auditoría y objetivos de la investigación forense.</p>
                 <ul class="resource-list">
-                    <li><a href="#" target="_blank">Tema 1: Fundamentos de DFIR y Gestión de Incidentes</a></li>
-                    <li><a href="#" target="_blank">Tema 2: Triage y Adquisición de Evidencias</a></li>
-                    <li><a href="#" target="_blank">Tema 3: Análisis de Artefactos y Líneas de Tiempo</a></li>
-                    <li><a href="#" target="_blank">Tema 4: Contención y Erradicación</a></li>
+                    <li><a href="#" target="_blank">Descargar Enunciado (PDF)</a></li>
                 </ul>
             </div>
 
-            <!-- Bloque: Laboratorios -->
             <div class="card">
-                <h2>💻 Laboratorios y Prácticas</h2>
+                <h3>💾 Evidencias y Artefactos</h3>
+                <p>Acceso a las imágenes de memoria, triages del sistema y capturas de tráfico de red asignadas.</p>
                 <ul class="resource-list">
-                    <li><a href="#" target="_blank">Lab 1: Recolección de evidencias vivas con scripts automatizados</a></li>
-                    <li><a href="#" target="_blank">Lab 2: Análisis forense de memoria volátil y sistemas de archivos</a></li>
-                    <li><a href="#" target="_blank">Guía del Entorno Virtual (Requisitos del sistema)</a></li>
+                    <li><a href="#" target="_blank">Repositorio de Evidencias</a></li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- SECCIÓN: CTFs -->
+        <h2 class="section-title">🏁 CTFs</h2>
+        <div class="grid">
+            <div class="card">
+                <h3>🕹️ Plataforma de Retos</h3>
+                <p>Acceso al entorno de competición donde se validarán los flags de los ejercicios de análisis forense y respuesta.</p>
+                <ul class="resource-list">
+                    <li><a href="#" target="_blank">Acceder al CTF</a></li>
                 </ul>
             </div>
 
-            <!-- Bloque: Herramientas -->
             <div class="card">
-                <h2>🛠️ Herramientas y Frameworks</h2>
+                <h3>📊 Clasificación y Guías</h3>
+                <p>Consulta el estado del marcador en tiempo real y las normas específicas para la resolución de los retos.</p>
                 <ul class="resource-list">
-                    <li><a href="https://github.com/Velocidex/velociraptor" target="_blank">Velociraptor (Endpoint Monitoring)</a></li>
-                    <li><a href="https://github.com/EricZimmerman/Kape" target="_blank">KAPE (Kroll Artifact Parser and Extractor)</a></li>
-                    <li><a href="https://www.volatilityfoundation.org/" target="_blank">Volatility Foundation</a></li>
-                </ul>
-            </div>
-
-            <!-- Bloque: Hojas de referencia -->
-            <div class="card">
-                <h2>📄 Cheat Sheets y Referencias</h2>
-                <ul class="resource-list">
-                    <li><a href="#" target="_blank">Guía de Referencia Rápida: Ciclo de vida NIST SP 800-61r2</a></li>
-                    <li><a href="#" target="_blank">Comandos esenciales para Análisis de Evidencias</a></li>
-                    <li><a href="#" target="_blank">Plantilla de Informe de Incidente Técnico</a></li>
+                    <li><a href="#" target="_blank">Normas del Tablero</a></li>
                 </ul>
             </div>
         </div>
@@ -173,6 +234,38 @@
     <footer>
         <p>&copy; 2026 IncidentManager Pages. Contenido exclusivo para alumnos del Máster en Ciberseguridad.</p>
     </footer>
+
+    <!-- Script para gestionar el cambio de modo claro / oscuro -->
+    <script>
+        const toggleBtn = document.getElementById('theme-toggle');
+        const themeIcon = document.getElementById('theme-icon');
+        const themeText = document.getElementById('theme-text');
+        
+        // Comprobar la preferencia guardada o el modo por defecto
+        const currentTheme = localStorage.getItem('theme') || 'dark';
+        
+        if (currentTheme === 'light') {
+            document.documentElement.setAttribute('data-theme', 'light');
+            themeIcon.textContent = '🌙';
+            themeText.textContent = 'Modo Oscuro';
+        }
+
+        toggleBtn.addEventListener('click', () => {
+            let theme = document.documentElement.getAttribute('data-theme');
+            
+            if (theme === 'light') {
+                document.documentElement.removeAttribute('data-theme');
+                localStorage.setItem('theme', 'dark');
+                themeIcon.textContent = '☀️';
+                themeText.textContent = 'Modo Claro';
+            } else {
+                document.documentElement.setAttribute('data-theme', 'light');
+                localStorage.setItem('theme', 'light');
+                themeIcon.textContent = '🌙';
+                themeText.textContent = 'Modo Oscuro';
+            }
+        });
+    </script>
 
 </body>
 </html>
