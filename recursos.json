@@ -9,8 +9,7 @@
         { "titulo": "Ingest 3: Datos post sesión", "url": "https://pub-d38a173e4f434750bf433e36bf7e9eef.r2.dev/CasoPractico/email3.html" },
         { "titulo": "Ingest 4: Email de equipo forense", "url": "https://pub-d38a173e4f434750bf433e36bf7e9eef.r2.dev/CasoPractico/email4.html" },
         { "titulo": "Ingest 5: Email de rescate", "url": "https://pub-d38a173e4f434750bf433e36bf7e9eef.r2.dev/CasoPractico/rescate1.html"},
-        { "titulo": "Ingest 6: Chat atacante", "url": "https://gemini.google.com/gem/1tQA-_rpeKHHf1CgBI9Zo1ea1OpHCEBh9?usp=sharing"},
-        { "titulo": "Ingest 6: Instrucciones para chat atacante", "url": "https://pub-d38a173e4f434750bf433e36bf7e9eef.r2.dev/CasoPractico/instruccioneschat.txt"}
+        { "titulo": "Ingest 6: Chat atacante", "url": "https://gemini.google.com/gem/1tQA-_rpeKHHf1CgBI9Zo1ea1OpHCEBh9?usp=sharing"}
       ]
     },
     {
@@ -18,7 +17,8 @@
       "descripcion": "Recursos complementarios del escenario",
       "enlaces": [
         { "titulo": "Adjunto enviado por ByteHorizon CoreSwift", "url": "https://pub-d38a173e4f434750bf433e36bf7e9eef.r2.dev/CasoPractico/informe1.docx" },
-        { "titulo": "Organigrama CoreSwift", "url": "https://pub-d38a173e4f434750bf433e36bf7e9eef.r2.dev/CasoPractico/OrganigramaCoreSwift.png" }
+        { "titulo": "Organigrama CoreSwift", "url": "https://pub-d38a173e4f434750bf433e36bf7e9eef.r2.dev/CasoPractico/OrganigramaCoreSwift.png" },
+        { "titulo": "Instrucciones para chat atacante", "url": "https://pub-d38a173e4f434750bf433e36bf7e9eef.r2.dev/CasoPractico/instruccioneschat.txt"}
       ]
     },
     {
