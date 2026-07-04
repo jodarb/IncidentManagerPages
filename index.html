@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>IncidentManager Pages - Introducción a la Respuesta ante Incidentes</title>
+    <style>
+        :root {
+            --bg-color: #0f172a;
+            --card-bg: #1e293b;
+            --text-color: #e2e8f0;
+            --text-muted: #94a3b8;
+            --accent-color: #38bdf8;
+            --border-color: #334155;
+        }
+
+        body {
+            font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            line-height: 1.6;
+            margin: 0;
+            padding: 0;
+        }
+
+        header {
+            border-bottom: 1px solid var(--border-color);
+            padding: 2rem 1rem;
+            text-align: center;
+        }
+
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 2rem 1rem;
+        }
+
+        h1 {
+            color: var(--accent-color);
+            margin: 0 0 0.5rem 0;
+            font-size: 2.5rem;
+        }
+
+        .subtitle {
+            color: var(--text-muted);
+            font-size: 1.2rem;
+            margin: 0;
+        }
+
+        .grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 1.5rem;
+            margin-top: 2rem;
+        }
+
+        @media (min-width: 768px) {
+            .grid {
+                grid-template-columns: 1fr 1fr;
+            }
+        }
+
+        .card {
+            background-color: var(--card-bg);
+            border: 1px solid var(--border-color);
+            border-radius: 8px;
+            padding: 1.5rem;
+            transition: transform 0.2s, border-color 0.2s;
+        }
+
+        .card:hover {
+            transform: translateY(-2px);
+            border-color: var(--accent-color);
+        }
+
+        .card h2 {
+            color: var(--accent-color);
+            margin-top: 0;
+            font-size: 1.3rem;
+        }
+
+        .resource-list {
+            list-style: none;
+            padding: 0;
+            margin: 1rem 0 0 0;
+        }
+
+        .resource-list li {
+            margin-bottom: 0.75rem;
+        }
+
+        .resource-list a {
+            color: var(--text-color);
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+        }
+
+        .resource-list a:hover {
+            color: var(--accent-color);
+        }
+
+        .resource-list a::before {
+            content: "🔗";
+            margin-right: 0.5rem;
+            font-size: 0.9rem;
+        }
+
+        footer {
+            text-align: center;
+            padding: 2rem 1rem;
+            color: var(--text-muted);
+            font-size: 0.9rem;
+            border-top: 1px solid var(--border-color);
+            margin-top: 4rem;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>IncidentManager Pages</h1>
+        <p class="subtitle">Asignatura: Introducción a la Respuesta ante Incidentes</p>
+    </header>
+
+    <div class="container">
+        <p>Bienvenidos al repositorio central de recursos de la asignatura. Aquí encontraréis las diapositivas, las guías de los laboratorios prácticos y las hojas de referencia necesarias para el seguimiento de las clases del Máster en Ciberseguridad.</p>
+
+        <div class="grid">
+            <!-- Bloque: Temario -->
+            <div class="card">
+                <h2>📚 Material de Clase</h2>
+                <ul class="resource-list">
+                    <li><a href="#" target="_blank">Tema 1: Fundamentos de DFIR y Gestión de Incidentes</a></li>
+                    <li><a href="#" target="_blank">Tema 2: Triage y Adquisición de Evidencias</a></li>
+                    <li><a href="#" target="_blank">Tema 3: Análisis de Artefactos y Líneas de Tiempo</a></li>
+                    <li><a href="#" target="_blank">Tema 4: Contención y Erradicación</a></li>
+                </ul>
+            </div>
+
+            <!-- Bloque: Laboratorios -->
+            <div class="card">
+                <h2>💻 Laboratorios y Prácticas</h2>
+                <ul class="resource-list">
+                    <li><a href="#" target="_blank">Lab 1: Recolección de evidencias vivas con scripts automatizados</a></li>
+                    <li><a href="#" target="_blank">Lab 2: Análisis forense de memoria volátil y sistemas de archivos</a></li>
+                    <li><a href="#" target="_blank">Guía del Entorno Virtual (Requisitos del sistema)</a></li>
+                </ul>
+            </div>
+
+            <!-- Bloque: Herramientas -->
+            <div class="card">
+                <h2>🛠️ Herramientas y Frameworks</h2>
+                <ul class="resource-list">
+                    <li><a href="https://github.com/Velocidex/velociraptor" target="_blank">Velociraptor (Endpoint Monitoring)</a></li>
+                    <li><a href="https://github.com/EricZimmerman/Kape" target="_blank">KAPE (Kroll Artifact Parser and Extractor)</a></li>
+                    <li><a href="https://www.volatilityfoundation.org/" target="_blank">Volatility Foundation</a></li>
+                </ul>
+            </div>
+
+            <!-- Bloque: Hojas de referencia -->
+            <div class="card">
+                <h2>📄 Cheat Sheets y Referencias</h2>
+                <ul class="resource-list">
+                    <li><a href="#" target="_blank">Guía de Referencia Rápida: Ciclo de vida NIST SP 800-61r2</a></li>
+                    <li><a href="#" target="_blank">Comandos esenciales para Análisis de Evidencias</a></li>
+                    <li><a href="#" target="_blank">Plantilla de Informe de Incidente Técnico</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <p>&copy; 2026 IncidentManager Pages. Contenido exclusivo para alumnos del Máster en Ciberseguridad.</p>
+    </footer>
+
+</body>
+</html>
