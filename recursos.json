@@ -7,7 +7,9 @@
         { "titulo": "Ingest 1: La activación", "url": "https://pub-d38a173e4f434750bf433e36bf7e9eef.r2.dev/CasoPractico/email1.html" },
         { "titulo": "Ingest 2: Primer contacto", "url": "https://pub-d38a173e4f434750bf433e36bf7e9eef.r2.dev/CasoPractico/email2.html" },
         { "titulo": "Ingest 3: Datos post sesión", "url": "https://pub-d38a173e4f434750bf433e36bf7e9eef.r2.dev/CasoPractico/email3.html" },
-        { "titulo": "Ingest 4: Email de equipo forense", "url": "https://pub-d38a173e4f434750bf433e36bf7e9eef.r2.dev/CasoPractico/email4.html" } 
+        { "titulo": "Ingest 4: Email de equipo forense", "url": "https://pub-d38a173e4f434750bf433e36bf7e9eef.r2.dev/CasoPractico/email4.html" },
+        { "titulo": "Ingest 5: Email de rescate", "url": "https://pub-d38a173e4f434750bf433e36bf7e9eef.r2.dev/CasoPractico/rescate1.html"},
+        { "titulo": "Ingest 6: Chat atacante", "url": "https://gemini.google.com/gem/1tQA-_rpeKHHf1CgBI9Zo1ea1OpHCEBh9?usp=sharing"}
       ]
     },
     {
@@ -25,7 +27,9 @@
         { "titulo": "Ejecicio 1: Respuesta a CoreSwift", "url": "https://pub-d38a173e4f434750bf433e36bf7e9eef.r2.dev/CasoPractico/Respuestas/respuesta1.html" },
         { "titulo": "Ejecicio 1: Brief inicial a ByteHorizon", "url": "https://pub-d38a173e4f434750bf433e36bf7e9eef.r2.dev/CasoPractico/Respuestas/respuesta2.html" },
         { "titulo": "Ejecicio 2: Respuesta a Juan Antonio", "url": "https://pub-d38a173e4f434750bf433e36bf7e9eef.r2.dev/CasoPractico/Respuestas/respuesta3.html" },
-        { "titulo": "Ejecicio 2: Brief a ByteHorizon", "url": "https://pub-d38a173e4f434750bf433e36bf7e9eef.r2.dev/CasoPractico/Respuestas/respuesta4.html" }
+        { "titulo": "Ejecicio 2: Brief a ByteHorizon", "url": "https://pub-d38a173e4f434750bf433e36bf7e9eef.r2.dev/CasoPractico/Respuestas/respuesta4.html" },
+        { "titulo": "Ejecicio 4: Ejemplo de chat", "url": "https://share.gemini.google/9e1qtsPzPjYj" }
+        
       ]
     }
   ],
