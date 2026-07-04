@@ -1,0 +1,50 @@
+{
+  "caso_practico": [
+    {
+      "subseccion": "📝 Enunciado y Contexto",
+      "descripcion": "Descripción del escenario de compromiso, alcance de la auditoría y objetivos de la investigación forense.",
+      "enlaces": [
+        { "titulo": "Descargar Enunciado (PDF)", "url": "#" }
+      ]
+    },
+    {
+      "subseccion": "💾 Evidencias y Artefactos",
+      "descripcion": "Acceso a las imágenes de memoria, triages del sistema y capturas de tráfico de red asignadas.",
+      "enlaces": [
+        { "titulo": "Repositorio de Evidencias", "url": "#" }
+      ]
+    }
+  ],
+  "ctfs": [
+    {
+      "subseccion": "🕹️ Plataforma de Retos",
+      "descripcion": "Acceso al entorno de competición donde se validarán los flags de los ejercicios de análisis forense y respuesta.",
+      "enlaces": [
+        { "titulo": "Acceder al CTF", "url": "#" }
+      ]
+    },
+    {
+      "subseccion": "📊 Clasificación y Guías",
+      "descripcion": "Consulta el estado del marcador en tiempo real y las normas específicas para la resolución de los retos.",
+      "enlaces": [
+        { "titulo": "Normas del Tablero", "url": "#" }
+      ]
+    }
+  ],
+  "recursos_utiles": [
+    {
+      "subseccion": "🧰 Herramientas Recomendadas",
+      "descripcion": "Enlaces a repositorios oficiales y software necesario para las tareas de análisis forense y triage.",
+      "enlaces": [
+        { "titulo": "Ver Herramientas", "url": "#" }
+      ]
+    },
+    {
+      "subseccion": "📖 Documentación y Plantillas",
+      "descripcion": "Hojas de referencia rápidos, metodologías estándar (NIST/ISO) y modelos para la elaboración de informes.",
+      "enlaces": [
+        { "titulo": "Acceder a Documentos", "url": "#" }
+      ]
+    }
+  ]
+}
