@@ -2,16 +2,16 @@
   "caso_practico": [
     {
       "subseccion": "📝 Enunciado y Contexto",
-      "descripcion": "Descripción del escenario de compromiso, alcance de la auditoría y objetivos de la investigación forense.",
+      "descripcion": "Descripción del escenario y los inputs del escenario",
       "enlaces": [
-        { "titulo": "Descargar Enunciado (PDF)", "url": "#" }
+        { "titulo": "TODO", "url": "#" }
       ]
     },
     {
-      "subseccion": "💾 Evidencias y Artefactos",
-      "descripcion": "Acceso a las imágenes de memoria, triages del sistema y capturas de tráfico de red asignadas.",
+      "subseccion": "💾 Recursos",
+      "descripcion": "Recursos complementarios del escenario",
       "enlaces": [
-        { "titulo": "Repositorio de Evidencias", "url": "#" }
+        { "titulo": "TODO", "url": "#" }
       ]
     }
   ],
@@ -25,26 +25,27 @@
       ]
     },
     {
-      "subseccion": "📊 Clasificación y Guías",
-      "descripcion": "Consulta el estado del marcador en tiempo real y las normas específicas para la resolución de los retos.",
+      "subseccion": "🕹️ Otros retos para practucar",
+      "descripcion": "Retos públicos para practicar",
       "enlaces": [
-        { "titulo": "Normas del Tablero", "url": "#" }
+        { "titulo": "Recopilación CTFs DFIR", "url": "https://www.securityartwork.es/2018/05/28/caso-practico-ratas-inminentes-i/" }
       ]
     }
   ],
   "recursos_utiles": [
     {
-      "subseccion": "🧰 Herramientas Recomendadas",
-      "descripcion": "Enlaces a repositorios oficiales y software necesario para las tareas de análisis forense y triage.",
+      "subseccion": "🧰 Herramientas",
+      "descripcion": "Herramientas recomendadas",
       "enlaces": [
-        { "titulo": "Ver Herramientas", "url": "#" }
+        { "titulo": "CyberChef", "url": "https://gchq.github.io/CyberChef/" },
+        { "titulo": "Draw IO", "url": "https://app.diagrams.net/" }
       ]
     },
     {
-      "subseccion": "📖 Documentación y Plantillas",
-      "descripcion": "Hojas de referencia rápidos, metodologías estándar (NIST/ISO) y modelos para la elaboración de informes.",
+      "subseccion": "📖 Referencias",
+      "descripcion": "Referencias usadas",
       "enlaces": [
-        { "titulo": "Acceder a Documentos", "url": "#" }
+        { "titulo": "NIST SP 800-61 Rev. 3", "url": "https://csrc.nist.gov/pubs/sp/800/61/r3/final" }
       ]
     }
   ]
