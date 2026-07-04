@@ -42,6 +42,15 @@
       ]
     },
     {
+      "subseccion": "🔍 A seguir",
+      "descripcion": "Fuentes de información que seguir",
+      "enlaces": [
+        { "titulo": "Lista twitter Alberto", "url": "https://x.com/i/lists/1777110376145924484" },
+        { "titulo": "This week in 4n6", "url": "https://thisweekin4n6.com/" },
+        { "titulo": "DFIR Report", "url": "https://thedfirreport.com/reports/" }
+      ]
+    },
+    {
       "subseccion": "📖 Referencias",
       "descripcion": "Referencias usadas",
       "enlaces": [
