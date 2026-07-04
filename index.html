@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>IncidentManager Pages - Introducción a la respuesta ante incidentes</title>
-    <link rel="icon" type="image/png" href="img/favicon.png">
+    <title>Introducción a la respuesta ante incidentes</title>
+    <link rel="icon" type="image/png" href="img/logo.png">
     <style>
         /* Variables de color por defecto (Modo Oscuro) */
         :root {
@@ -46,6 +46,15 @@
             position: relative;
         }
 
+        /* Estilos del Logo */
+        .header-logo {
+            width: 80px;
+            height: 80px;
+            object-fit: contain;
+            margin-bottom: 1rem;
+            border-radius: 12px;
+        }
+
         /* Contenedor del Botón de Modo Claro / Oscuro */
         .theme-toggle-container {
             position: absolute;
@@ -73,18 +82,13 @@
         }
 
         h1 {
-            color: var(--accent-color);
-            margin: 0 0 0.5rem 0;
-            font-size: 2.3rem;
-        }
-
-        .subtitle {
-            color: var(--text-muted);
-            font-size: 1.2rem;
+            color: var(--text-color);
             margin: 0 0 1.5rem 0;
+            font-size: 2.3rem;
+            font-weight: 700;
         }
 
-        /* Nueva sección de profesores */
+        /* Sección de profesores */
         .teachers-section {
             display: flex;
             justify-content: center;
@@ -223,8 +227,10 @@
                 <span id="theme-icon">☀️</span> <span id="theme-text">Modo Claro</span>
             </button>
         </div>
-        <h1>IncidentManager Pages</h1>
-        <p class="subtitle">Introducción a la respuesta ante incidentes</p>
+        
+        <img src="img/logo.png" alt="Logo" class="header-logo">
+        
+        <h1>Introducción a la respuesta ante incidentes</h1>
         
         <div class="teachers-section">
             <span class="teachers-title">Profesores:</span>
@@ -279,10 +285,29 @@
                 </ul>
             </div>
         </div>
+
+        <h2 class="section-title">🛠️ Recursos útiles</h2>
+        <div class="grid">
+            <div class="card">
+                <h3>🧰 Herramientas Recomendadas</h3>
+                <p>Enlaces a repositorios oficiales y software necesario para las tareas de análisis forense y triage.</p>
+                <ul class="resource-list">
+                    <li><a href="#" target="_blank">Ver Herramientas</a></li>
+                </ul>
+            </div>
+
+            <div class="card">
+                <h3>📖 Documentación y Plantillas</h3>
+                <p>Hojas de referencia rápidos, metodologías estándar (NIST/ISO) y modelos para la elaboración de informes.</p>
+                <ul class="resource-list">
+                    <li><a href="#" target="_blank">Acceder a Documentos</a></li>
+                </ul>
+            </div>
+        </div>
     </div>
 
     <footer>
-        <p>&copy; 2026 IncidentManager Pages. Contenido exclusivo para alumnos del Máster en Ciberseguridad.</p>
+        <p>&copy; 2026. Contenido exclusivo para alumnos del Máster en Ciberseguridad.</p>
     </footer>
 
     <script>
@@ -305,16 +330,4 @@
             if (theme === 'light') {
                 document.documentElement.removeAttribute('data-theme');
                 localStorage.setItem('theme', 'dark');
-                themeIcon.textContent = '☀️';
-                themeText.textContent = 'Modo Claro';
-            } else {
-                document.documentElement.setAttribute('data-theme', 'light');
-                localStorage.setItem('theme', 'light');
-                themeIcon.textContent = '🌙';
-                themeText.textContent = 'Modo Oscuro';
-            }
-        });
-    </script>
-
-</body>
-</html>
+                theme
