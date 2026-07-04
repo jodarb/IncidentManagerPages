@@ -17,10 +17,11 @@
   ],
   "ctfs": [
     {
-      "subseccion": "🕹️ Plataforma de Retos",
-      "descripcion": "Acceso al entorno de competición donde se validarán los flags de los ejercicios de análisis forense y respuesta.",
+      "subseccion": "🕹️ Retos de la asignatura",
+      "descripcion": "Los retos que hacemos durante la asignatura",
       "enlaces": [
-        { "titulo": "Acceder al CTF", "url": "#" }
+        { "titulo": "Analisis de logs", "url": "https://pub-d38a173e4f434750bf433e36bf7e9eef.r2.dev/CTFs/LogAnalysis01/CTFChecker-LogAnalysis01.html" },
+        { "titulo": "Triaje Windows", "url": "https://pub-d38a173e4f434750bf433e36bf7e9eef.r2.dev/CTFs/Triaje01/CTFChecker-LaGranja.html" }
       ]
     },
     {
