@@ -5,8 +5,8 @@
       "descripcion": "Descripción del escenario y los inputs del escenario",
       "enlaces": [
         { "titulo": "Ingest 1: La activación", "url": "https://pub-d38a173e4f434750bf433e36bf7e9eef.r2.dev/CasoPractico/email1.html" },
-        { "titulo": "Ingest 2: Primer contacto", "url": "https://pub-d38a173e4f434750bf433e36bf7e9eef.r2.dev/CasoPractico/email2.html" }
-        { "titulo": "Ingest 3: Datos post sesión", "url": "https://pub-d38a173e4f434750bf433e36bf7e9eef.r2.dev/CasoPractico/email3.html" } 
+        { "titulo": "Ingest 2: Primer contacto", "url": "https://pub-d38a173e4f434750bf433e36bf7e9eef.r2.dev/CasoPractico/email2.html" },
+        { "titulo": "Ingest 3: Datos post sesión", "url": "https://pub-d38a173e4f434750bf433e36bf7e9eef.r2.dev/CasoPractico/email3.html" },
         { "titulo": "Ingest 4: Email de equipo forense", "url": "https://pub-d38a173e4f434750bf433e36bf7e9eef.r2.dev/CasoPractico/email4.html" } 
       ]
     },
@@ -14,7 +14,7 @@
       "subseccion": "💾 Recursos",
       "descripcion": "Recursos complementarios del escenario",
       "enlaces": [
-        { "titulo": "Adjunto enviado por ByteHorizon CoreSwift", "url": "https://pub-d38a173e4f434750bf433e36bf7e9eef.r2.dev/CasoPractico/informe1.docx" }
+        { "titulo": "Adjunto enviado por ByteHorizon CoreSwift", "url": "https://pub-d38a173e4f434750bf433e36bf7e9eef.r2.dev/CasoPractico/informe1.docx" },
         { "titulo": "Organigrama CoreSwift", "url": "https://pub-d38a173e4f434750bf433e36bf7e9eef.r2.dev/CasoPractico/OrganigramaCoreSwift.png" }
       ]
     },
@@ -22,7 +22,7 @@
       "subseccion": "✅ Resolución",
       "descripcion": "Un ejemplo de resolución por el profesor",
       "enlaces": [
-        { "titulo": "Ejecicio 1: Respuesta a CoreSwift", "url": "https://pub-d38a173e4f434750bf433e36bf7e9eef.r2.dev/CasoPractico/Respuestas/respuesta1.html" }
+        { "titulo": "Ejecicio 1: Respuesta a CoreSwift", "url": "https://pub-d38a173e4f434750bf433e36bf7e9eef.r2.dev/CasoPractico/Respuestas/respuesta1.html" },
         { "titulo": "Ejecicio 1: Brief inicial a ByteHorizon", "url": "https://pub-d38a173e4f434750bf433e36bf7e9eef.r2.dev/CasoPractico/Respuestas/respuesta2.html" },
         { "titulo": "Ejecicio 2: Respuesta a Juan Antonio", "url": "https://pub-d38a173e4f434750bf433e36bf7e9eef.r2.dev/CasoPractico/Respuestas/respuesta3.html" },
         { "titulo": "Ejecicio 2: Brief a ByteHorizon", "url": "https://pub-d38a173e4f434750bf433e36bf7e9eef.r2.dev/CasoPractico/Respuestas/respuesta4.html" },
