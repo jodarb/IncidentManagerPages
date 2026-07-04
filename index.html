@@ -15,6 +15,7 @@
             --accent-color: #38bdf8;
             --border-color: #334155;
             --card-title: #ffffff;
+            --linkedin-color: #0a66c2;
         }
 
         /* Variables de color (Modo Claro) */
@@ -71,12 +72,6 @@
             border-color: var(--accent-color);
         }
 
-        .container {
-            max-width: 900px;
-            margin: 0 auto;
-            padding: 2rem 1rem;
-        }
-
         h1 {
             color: var(--accent-color);
             margin: 0 0 0.5rem 0;
@@ -86,7 +81,52 @@
         .subtitle {
             color: var(--text-muted);
             font-size: 1.2rem;
-            margin: 0;
+            margin: 0 0 1.5rem 0;
+        }
+
+        /* Nueva sección de profesores */
+        .teachers-section {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 1rem;
+            font-size: 0.95rem;
+            flex-wrap: wrap;
+        }
+
+        .teachers-title {
+            font-weight: 600;
+            color: var(--text-muted);
+        }
+
+        .teacher-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.4rem;
+            color: var(--text-color);
+            text-decoration: none;
+            background-color: var(--card-bg);
+            padding: 0.3rem 0.8rem;
+            border-radius: 6px;
+            border: 1px solid var(--border-color);
+            transition: border-color 0.2s, color 0.2s;
+        }
+
+        .teacher-link:hover {
+            border-color: var(--linkedin-color);
+            color: var(--accent-color);
+        }
+
+        .linkedin-icon {
+            width: 16px;
+            height: 16px;
+            fill: var(--linkedin-color);
+        }
+
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 2rem 1rem;
         }
 
         .section-title {
@@ -185,12 +225,23 @@
         </div>
         <h1>IncidentManager Pages</h1>
         <p class="subtitle">Introducción a la respuesta ante incidentes</p>
+        
+        <div class="teachers-section">
+            <span class="teachers-title">Profesores:</span>
+            <a href="https://www.linkedin.com/in/sara-concepcion-mariscal/" target="_blank" class="teacher-link">
+                <svg class="linkedin-icon" viewBox="0 0 24 24"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/></svg>
+                Sara Concepción
+            </a>
+            <a href="https://www.linkedin.com/in/albertojodar/" target="_blank" class="teacher-link">
+                <svg class="linkedin-icon" viewBox="0 0 24 24"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/></svg>
+                Alberto Jódar
+            </a>
+        </div>
     </header>
 
     <div class="container">
         <p>Espacio centralizado de recursos, documentación y despliegue de entornos prácticos para el seguimiento de la asignatura.</p>
 
-        <!-- SECCIÓN: CASO PRÁCTICO -->
         <h2 class="section-title">📂 Caso práctico</h2>
         <div class="grid">
             <div class="card">
@@ -210,7 +261,6 @@
             </div>
         </div>
 
-        <!-- SECCIÓN: CTFs -->
         <h2 class="section-title">🏁 CTFs</h2>
         <div class="grid">
             <div class="card">
@@ -235,7 +285,6 @@
         <p>&copy; 2026 IncidentManager Pages. Contenido exclusivo para alumnos del Máster en Ciberseguridad.</p>
     </footer>
 
-    <!-- Script para gestionar el cambio de modo claro / oscuro -->
     <script>
         const toggleBtn = document.getElementById('theme-toggle');
         const themeIcon = document.getElementById('theme-icon');
