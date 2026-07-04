@@ -12,6 +12,7 @@
       "subseccion": "💾 Recursos",
       "descripcion": "Recursos complementarios del escenario",
       "enlaces": [
+        { "titulo": "Adjunto enviado por ByteHorizon CoreSwift", "url": "https://pub-d38a173e4f434750bf433e36bf7e9eef.r2.dev/CasoPractico/informe1.docx" }
         { "titulo": "Organigrama CoreSwift", "url": "https://pub-d38a173e4f434750bf433e36bf7e9eef.r2.dev/CasoPractico/OrganigramaCoreSwift.png" }
       ]
     }
@@ -26,7 +27,7 @@
       ]
     },
     {
-      "subseccion": "🕹️ Otros retos para practucar",
+      "subseccion": "🕹️ Otros retos para practicar",
       "descripcion": "Retos públicos para practicar",
       "enlaces": [
         { "titulo": "Recopilación CTFs DFIR", "url": "https://www.securityartwork.es/2018/05/28/caso-practico-ratas-inminentes-i/" }
