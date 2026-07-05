@@ -18,7 +18,8 @@
       "enlaces": [
         { "titulo": "Adjunto enviado por ByteHorizon CoreSwift", "url": "https://pub-d38a173e4f434750bf433e36bf7e9eef.r2.dev/CasoPractico/informe1.docx" },
         { "titulo": "Organigrama CoreSwift", "url": "https://pub-d38a173e4f434750bf433e36bf7e9eef.r2.dev/CasoPractico/OrganigramaCoreSwift.png" },
-        { "titulo": "Instrucciones para chat", "url": "https://pub-d38a173e4f434750bf433e36bf7e9eef.r2.dev/CasoPractico/instruccioneschat.txt"}
+        { "titulo": "Instrucciones para chat", "url": "https://pub-d38a173e4f434750bf433e36bf7e9eef.r2.dev/CasoPractico/instruccioneschat.txt"},
+        { "titulo": "Conversaciones reales", "url": "https://ransomch.at/"} 
       ]
     },
     {
