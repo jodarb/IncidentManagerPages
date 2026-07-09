@@ -6,9 +6,14 @@
         "subseccion": "📝 Escenario 1: La activación",
         "descripcion": "Inputs y contexto de este escenario",
         "enlaces": [
-          { "titulo": "Ingest 1: La activación", "url": "https://pub-d38a173e4f434750bf433e36bf7e9eef.r2.dev/CasoPractico/email1.html" },
-          { "titulo": "Ingest 2: Primer contacto", "url": "https://pub-d38a173e4f434750bf433e36bf7e9eef.r2.dev/CasoPractico/email2.html" },
-          { "titulo": "Adjunto enviado por ByteHorizon CoreSwift", "url": "https://pub-d38a173e4f434750bf433e36bf7e9eef.r2.dev/CasoPractico/informe1.docx" }
+          {
+            "titulo": "Ingest 1: La activación",
+            "url": "https://pub-d38a173e4f434750bf433e36bf7e9eef.r2.dev/CasoPractico/email1.html",
+            "adjuntos": [
+              { "titulo": "Adjunto: Informe enviado por ByteHorizon CoreSwift", "url": "https://pub-d38a173e4f434750bf433e36bf7e9eef.r2.dev/CasoPractico/informe1.docx" }
+            ]
+          },
+          { "titulo": "Ingest 2: Primer contacto", "url": "https://pub-d38a173e4f434750bf433e36bf7e9eef.r2.dev/CasoPractico/email2.html" }
         ]
       },
       {

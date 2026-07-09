@@ -209,6 +209,33 @@
             margin-right: 0.5rem;
         }
 
+        .attachment-list {
+            list-style: none;
+            padding: 0;
+            margin: 0.4rem 0 0 1.25rem;
+        }
+
+        .attachment-list li {
+            margin-bottom: 0.4rem;
+        }
+
+        .attachment-list a {
+            color: var(--text-muted);
+            text-decoration: none;
+            font-size: 0.9rem;
+            font-weight: 500;
+        }
+
+        .attachment-list a:hover {
+            text-decoration: underline;
+            color: var(--accent-color);
+        }
+
+        .attachment-list a::before {
+            content: "📎";
+            margin-right: 0.5rem;
+        }
+
         .unlock-form {
             display: flex;
             flex-wrap: wrap;
@@ -337,9 +364,14 @@
             if (!subsecciones) return '';
             return subsecciones.map(sub => {
                 // Construir la lista de enlaces de esta subsección
-                const listaEnlaces = sub.enlaces.map(link =>
-                    `<li><a href="${link.url}" target="_blank">${link.titulo}</a></li>`
-                ).join('');
+                const listaEnlaces = sub.enlaces.map(link => {
+                    const listaAdjuntos = link.adjuntos ? `
+                        <ul class="attachment-list">${link.adjuntos.map(adj =>
+                            `<li><a href="${adj.url}" target="_blank">${adj.titulo}</a></li>`
+                        ).join('')}</ul>
+                    ` : '';
+                    return `<li><a href="${link.url}" target="_blank">${link.titulo}</a>${listaAdjuntos}</li>`;
+                }).join('');
 
                 // Retornar la estructura de la tarjeta completa
                 return `
