@@ -21,7 +21,12 @@
         "subseccion": "📝 Escenario 2: Sesión inicial",
         "descripcion": "Inputs y contexto de este escenario",
         "enlaces": [
-          { "titulo": "Ingest 3: Datos post sesión", "url": "https://pub-d38a173e4f434750bf433e36bf7e9eef.r2.dev/CasoPractico/email3.html" }
+          { "titulo": "Ingest 3: Datos post sesión", 
+            "url": "https://pub-d38a173e4f434750bf433e36bf7e9eef.r2.dev/CasoPractico/email3.html",
+            "adjuntos": [
+              { "titulo": "Plantilla Forense Timeline", "url": "https://pub-d38a173e4f434750bf433e36bf7e9eef.r2.dev/CasoPractico/PlantillaForense.xlsx" }
+            ]
+          }
         ]
       },
       {
