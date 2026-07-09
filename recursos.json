@@ -18,7 +18,7 @@
       },
       {
         "numero": 2,
-        "subseccion": "📝 Escenario 2: Datos post sesión",
+        "subseccion": "📝 Escenario 2: Sesión inicial",
         "descripcion": "Inputs y contexto de este escenario",
         "enlaces": [
           { "titulo": "Ingest 3: Datos post sesión", "url": "https://pub-d38a173e4f434750bf433e36bf7e9eef.r2.dev/CasoPractico/email3.html" }
@@ -58,9 +58,9 @@
         "algoritmo": "AES-GCM",
         "kdf": "PBKDF2-SHA256",
         "iteraciones": 250000,
-        "salt": "iHJnC+Y2YunDulZcEZdRcA==",
-        "iv": "fF5rpZAHhjnS7feF",
-        "ciphertext": "25dGWUt/M+kH693OdS/fSalpFv7O3iFJJwNu3zsG7rGJ5JZXuxcTcWii9jr/xTymUQjuGgclR4f7nhoWQetGOIZl3lGSooNpwmGS5RNsBMGYDVzZN/4rLdROKm9XNaGx1Y2xEKN72pdbzbXoT/+hHRz7+m/A4NMELHlk5KsKrr3RtJxu4j6IhOi24xsS+QvP+foijzC2d1f87SshRLtAXZJCe/6OirYkKDMJudAHyt8nawgJMRvDUPIB9p3lPGxkgPDQ1VYR30Vn9xwWLGgROSb2hP/ljWP2/anIz87CJEa+bDpM6tSnJ9525WHGQEZQwLgbByvUFeyM8tKpA5IXKboP90TaZ08zUTT1htymusE6+tG+yzRFB0g+e7r/fVNPza3tCZNcG6wr/HJuHaKW+2AmH0nO+ougOc3hiY51d1GSSwwGTaRGu/EW6sOsEA0NVYyr4skI6WXF/iT3U+k8uXygOT9P8Hm861bOg+rPG4jx5DnNXOqBkWqa+lkdOdY56b/IfF99C1FjwUkSErMOmlhI1fRt7SkJiI+d5r7fDdE2+J5RyBiwK8+X+rzPOuo/rZx0VrggEZGJybKO9cKCOEYj6zlvXfeoWR4xhJHFUu1mzuhenZVkb5LlgJKIBnw8BPwTEWI9l4d4qnmSRntz1LIrdwnRy5DigqBkWzDNzjRufK08mD79Edlzet4amDDM6mAqp+YHYJHNpghDzK7D2cEmPP8X7FcH4vdTpJM1+c4NK5hSE1DjKIeuv9clCJpPlLZZnlGzPQGggjFoKMpEVeKdzLlxkDk7R3hp+6Im+PCu7vU9DbioRxdxIj689OQeue7NyEMAsXLaG9j8BmSTQ1UfinPIj0zKtrBcrIC/UqGrmbugY6LYUaLyJb86z9F27PuNxUQdqDXVAyOjAGlsOcYJdEAFwEqc88KuwPxqWuScP6I="
+        "salt": "QbIWy/1Kb3Isy4U6UqWJhw==",
+        "iv": "5vH3xM9YcM+XUlyQ",
+        "ciphertext": "Hf+d31GKQPqMR3vOH3kw6XWiA4TTubk9+S0TRFwTB7EMPCxD4YSeYpx5ayQ6Hj7flg7zpv6PLs8a3oHjmHYx8RQ+czgoqr3KBtkDprzRNzpjPQvj/UXkdFDr72Wr4+Qp0sDRRrg++TVrN5oZwtAUwflrx9iheyN77iEBmnxj/S0d8DSx3L0aTQuT/3Pgr5wQJOGI3LaSJN9U90MNMWuLXcb4rUSUos4gnTWL55fYTUna48NDmONi7F5lHqUacEgk5dne/0Uj7tE+fmXY/Fkd08kvSKfYLSvcThfnxqYEoEOn53HNUuggd1Obf1OcMzP2CYkojiXGNiRBWCs/B9qP4n7B1e7R231uSDKGgMNUpdFV4NwOsjsbF6mRj5K+c+OCboKTdeBgBdS6EGt+OE/Vm+m/TQLRL6jWhMGK8ZavBMg0fwwWH7/Vuav6StLq5mKurBn9beUf0HuNNpUNLbiI1dCqitkg8V0CLLJ3+Sz6xUqaqhg9CBcvsaMBxgAVz5PAPhaz4js2UTlmxm5gC3YLA31PajShL6x3u6cLny1HwXbPF/A2o7WreULWWpqymBWFy9W34V7rocIgFbyYbyXcbY6oARc4A+QPg4Zm573G2wiM/95llvRAB0xBTD32fccNiPxyK+VrlfW/LFM0yB4DSoB0A4p0UY+m2rLHr6GHWRGhyXDlsrtY6BjJRXwluufes3RM7R3tutaQuP0HbryUHaK060e+IGzOoSWQQXRROKUGlIkXOdBbtosV5UecfZLacw8sp5qrRt9fXQzbpNxdjB5Aj/991e3mk2avHDqeDAs7Eq+l4Cj2IS3MfFU5g8GGdSUPqIx8Gt+lwk3KWrvonuSfBVEBixE6sXa/mlrr2wuoRGTGP178vfNy62cMdcKhL0dogRHwbJGU32npwsq3NS4qh7egbtR1qBDcpIremJ3uYcYu1VRzFMggQakZ4C51zcK8TO41EuBYnfHiNVvWknDBDHOeW5WLPsRiXBw0aWYX/i1FRoCqdhKC"
       }
     }
   },

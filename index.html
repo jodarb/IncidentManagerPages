@@ -236,6 +236,26 @@
             margin-right: 0.5rem;
         }
 
+        .exercise-list {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .exercise-list > li {
+            margin-bottom: 1rem;
+        }
+
+        .exercise-list > li:last-child {
+            margin-bottom: 0;
+        }
+
+        .exercise-list h4 {
+            margin: 0 0 0.4rem 0;
+            color: var(--card-title);
+            font-size: 1rem;
+        }
+
         .unlock-form {
             display: flex;
             flex-wrap: wrap;
@@ -403,7 +423,7 @@
                         <input type="password" class="unlock-input" placeholder="Contraseña de profesor" autocomplete="off" required>
                         <button type="submit">Desbloquear</button>
                         <p class="unlock-error" hidden>Contraseña incorrecta.</p>
-                        <ul class="resource-list unlock-result" hidden></ul>
+                        <ul class="exercise-list unlock-result" hidden></ul>
                     </form>
                 </div>
             `;
@@ -449,10 +469,15 @@
                 errorMsg.hidden = true;
 
                 try {
-                    const enlaces = await descifrarResolucion(cifrado, input.value);
-                    resultado.innerHTML = enlaces.map(link =>
-                        `<li><a href="${link.url}" target="_blank">${link.titulo}</a></li>`
-                    ).join('');
+                    const grupos = await descifrarResolucion(cifrado, input.value);
+                    resultado.innerHTML = grupos.map(grupo => `
+                        <li>
+                            <h4>${grupo.ejercicio}</h4>
+                            <ul class="resource-list">${grupo.enlaces.map(link =>
+                                `<li><a href="${link.url}" target="_blank">${link.titulo}</a></li>`
+                            ).join('')}</ul>
+                        </li>
+                    `).join('');
                     resultado.hidden = false;
                     input.hidden = true;
                     boton.hidden = true;
