@@ -209,6 +209,49 @@
             margin-right: 0.5rem;
         }
 
+        .unlock-form {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+        }
+
+        .unlock-input {
+            flex: 1 1 auto;
+            min-width: 0;
+            padding: 0.5rem 0.75rem;
+            border-radius: 6px;
+            border: 1px solid var(--border-color);
+            background-color: var(--bg-color);
+            color: var(--text-color);
+        }
+
+        .unlock-form button {
+            padding: 0.5rem 1rem;
+            border-radius: 6px;
+            border: 1px solid var(--accent-color);
+            background-color: transparent;
+            color: var(--accent-color);
+            cursor: pointer;
+            font-weight: 500;
+        }
+
+        .unlock-form button:hover {
+            background-color: var(--accent-color);
+            color: var(--card-bg);
+        }
+
+        .unlock-error {
+            width: 100%;
+            color: #f87171;
+            font-size: 0.9rem;
+            margin: 0.25rem 0 0 0;
+        }
+
+        .unlock-result {
+            width: 100%;
+            margin-top: 0.75rem !important;
+        }
+
         footer {
             text-align: center;
             padding: 2rem 1rem;
@@ -290,34 +333,120 @@
         });
 
         // 2. CARGA DINÁMICA CON JERARQUÍA SIMPLIFICADA
+        const generarTarjetasEnlaces = (subsecciones) => {
+            if (!subsecciones) return '';
+            return subsecciones.map(sub => {
+                // Construir la lista de enlaces de esta subsección
+                const listaEnlaces = sub.enlaces.map(link =>
+                    `<li><a href="${link.url}" target="_blank">${link.titulo}</a></li>`
+                ).join('');
+
+                // Retornar la estructura de la tarjeta completa
+                return `
+                    <div class="card">
+                        <h3>${sub.subseccion}</h3>
+                        <p>${sub.descripcion}</p>
+                        <ul class="resource-list">${listaEnlaces}</ul>
+                    </div>
+                `;
+            }).join('');
+        };
+
+        const generarSeccion = (containerId, subsecciones) => {
+            const contenedor = document.getElementById(containerId);
+            if (!contenedor || !subsecciones) return;
+            contenedor.innerHTML = generarTarjetasEnlaces(subsecciones);
+        };
+
+        // La Resolución no se pinta en texto plano: se muestra un formulario
+        // que descifra el contenido (AES-GCM/PBKDF2) en el navegador solo si
+        // la contraseña de profesor es correcta.
+        const generarTarjetaResolucion = (resolucion) => {
+            if (!resolucion) return '';
+            return `
+                <div class="card">
+                    <h3>${resolucion.subseccion}</h3>
+                    <p>${resolucion.descripcion}</p>
+                    <form class="unlock-form" data-cifrado='${JSON.stringify(resolucion.cifrado)}'>
+                        <input type="password" class="unlock-input" placeholder="Contraseña de profesor" autocomplete="off" required>
+                        <button type="submit">Desbloquear</button>
+                        <p class="unlock-error" hidden>Contraseña incorrecta.</p>
+                        <ul class="resource-list unlock-result" hidden></ul>
+                    </form>
+                </div>
+            `;
+        };
+
+        const base64ToBytes = (b64) => {
+            const binario = atob(b64);
+            const bytes = new Uint8Array(binario.length);
+            for (let i = 0; i < binario.length; i++) bytes[i] = binario.charCodeAt(i);
+            return bytes;
+        };
+
+        const descifrarResolucion = async (cifrado, password) => {
+            const salt = base64ToBytes(cifrado.salt);
+            const iv = base64ToBytes(cifrado.iv);
+            const ciphertext = base64ToBytes(cifrado.ciphertext);
+
+            const keyMaterial = await crypto.subtle.importKey(
+                'raw', new TextEncoder().encode(password), 'PBKDF2', false, ['deriveKey']
+            );
+            const key = await crypto.subtle.deriveKey(
+                { name: 'PBKDF2', salt, iterations: cifrado.iteraciones, hash: 'SHA-256' },
+                keyMaterial,
+                { name: 'AES-GCM', length: 256 },
+                false,
+                ['decrypt']
+            );
+            const plaintext = await crypto.subtle.decrypt({ name: 'AES-GCM', iv }, key, ciphertext);
+            return JSON.parse(new TextDecoder().decode(plaintext));
+        };
+
+        const configurarDesbloqueoResolucion = () => {
+            const form = document.querySelector('.unlock-form');
+            if (!form) return;
+            const cifrado = JSON.parse(form.dataset.cifrado);
+
+            form.addEventListener('submit', async (e) => {
+                e.preventDefault();
+                const input = form.querySelector('.unlock-input');
+                const errorMsg = form.querySelector('.unlock-error');
+                const resultado = form.querySelector('.unlock-result');
+                const boton = form.querySelector('button');
+                errorMsg.hidden = true;
+
+                try {
+                    const enlaces = await descifrarResolucion(cifrado, input.value);
+                    resultado.innerHTML = enlaces.map(link =>
+                        `<li><a href="${link.url}" target="_blank">${link.titulo}</a></li>`
+                    ).join('');
+                    resultado.hidden = false;
+                    input.hidden = true;
+                    boton.hidden = true;
+                } catch (err) {
+                    errorMsg.hidden = false;
+                }
+            });
+        };
+
         fetch(`recursos.json`)
             .then(response => response.json())
             .then(data => {
-                const generarSeccion = (containerId, subsecciones) => {
-                    const contenedor = document.getElementById(containerId);
-                    if (!contenedor || !subsecciones) return;
+                const casoPractico = data.caso_practico || {};
+                const contenedorCaso = document.getElementById('grid-caso-practico');
+                if (contenedorCaso) {
+                    contenedorCaso.innerHTML =
+                        generarTarjetasEnlaces(casoPractico.escenarios) +
+                        generarTarjetasEnlaces([casoPractico.recursos_generales].filter(Boolean)) +
+                        generarTarjetaResolucion(casoPractico.resolucion);
+                }
 
-                    contenedor.innerHTML = subsecciones.map(sub => {
-                        // Construir la lista de enlaces de esta subsección
-                        const listaEnlaces = sub.enlaces.map(link => 
-                            `<li><a href="${link.url}" target="_blank">${link.titulo}</a></li>`
-                        ).join('');
-
-                        // Retornar la estructura de la tarjeta completa
-                        return `
-                            <div class="card">
-                                <h3>${sub.subseccion}</h3>
-                                <p>${sub.descripcion}</p>
-                                <ul class="resource-list">${listaEnlaces}</ul>
-                            </div>
-                        `;
-                    }).join('');
-                };
-
-                // Renderizar las 3 secciones principales de la web
-                generarSeccion('grid-caso-practico', data.caso_practico);
+                // Renderizar el resto de secciones de la web
                 generarSeccion('grid-ctfs', data.ctfs);
                 generarSeccion('grid-recursos-utiles', data.recursos_utiles);
+
+                configurarDesbloqueoResolucion();
             })
             .catch(err => console.error("Error al procesar recursos.json:", err));
     </script>

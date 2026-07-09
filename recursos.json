@@ -1,46 +1,70 @@
 {
-  "caso_practico": [
-    {
-      "subseccion": "📝 Enunciado y Contexto",
-      "descripcion": "Descripción del escenario y los inputs del escenario",
+  "caso_practico": {
+    "escenarios": [
+      {
+        "numero": 1,
+        "subseccion": "📝 Escenario 1: La activación",
+        "descripcion": "Inputs y contexto de este escenario",
+        "enlaces": [
+          { "titulo": "Ingest 1: La activación", "url": "https://pub-d38a173e4f434750bf433e36bf7e9eef.r2.dev/CasoPractico/email1.html" },
+          { "titulo": "Ingest 2: Primer contacto", "url": "https://pub-d38a173e4f434750bf433e36bf7e9eef.r2.dev/CasoPractico/email2.html" },
+          { "titulo": "Adjunto enviado por ByteHorizon CoreSwift", "url": "https://pub-d38a173e4f434750bf433e36bf7e9eef.r2.dev/CasoPractico/informe1.docx" }
+        ]
+      },
+      {
+        "numero": 2,
+        "subseccion": "📝 Escenario 2: Datos post sesión",
+        "descripcion": "Inputs y contexto de este escenario",
+        "enlaces": [
+          { "titulo": "Ingest 3: Datos post sesión", "url": "https://pub-d38a173e4f434750bf433e36bf7e9eef.r2.dev/CasoPractico/email3.html" }
+        ]
+      },
+      {
+        "numero": 3,
+        "subseccion": "📝 Escenario 3: Forense y rescate",
+        "descripcion": "Inputs y contexto de este escenario",
+        "enlaces": [
+          { "titulo": "Ingest 4: Email de equipo forense", "url": "https://pub-d38a173e4f434750bf433e36bf7e9eef.r2.dev/CasoPractico/email4.html" },
+          { "titulo": "Ingest 5: Email de rescate", "url": "https://pub-d38a173e4f434750bf433e36bf7e9eef.r2.dev/CasoPractico/rescate1.html" }
+        ]
+      },
+      {
+        "numero": 4,
+        "subseccion": "📝 Escenario 4: Chat con el atacante",
+        "descripcion": "Inputs y contexto de este escenario",
+        "enlaces": [
+          { "titulo": "Ingest 6: Chat atacante", "url": "https://gemini.google.com/gem/1tQA-_rpeKHHf1CgBI9Zo1ea1OpHCEBh9?usp=sharing" },
+          { "titulo": "Instrucciones para chat", "url": "https://pub-d38a173e4f434750bf433e36bf7e9eef.r2.dev/CasoPractico/instruccioneschat.txt" },
+          { "titulo": "Conversaciones reales", "url": "https://ransomch.at/" }
+        ]
+      }
+    ],
+    "recursos_generales": {
+      "subseccion": "💾 Recursos generales",
+      "descripcion": "Recursos comunes, no ligados a un escenario concreto",
       "enlaces": [
-        { "titulo": "Ingest 1: La activación", "url": "https://pub-d38a173e4f434750bf433e36bf7e9eef.r2.dev/CasoPractico/email1.html" },
-        { "titulo": "Ingest 2: Primer contacto", "url": "https://pub-d38a173e4f434750bf433e36bf7e9eef.r2.dev/CasoPractico/email2.html" },
-        { "titulo": "Ingest 3: Datos post sesión", "url": "https://pub-d38a173e4f434750bf433e36bf7e9eef.r2.dev/CasoPractico/email3.html" },
-        { "titulo": "Ingest 4: Email de equipo forense", "url": "https://pub-d38a173e4f434750bf433e36bf7e9eef.r2.dev/CasoPractico/email4.html" },
-        { "titulo": "Ingest 5: Email de rescate", "url": "https://pub-d38a173e4f434750bf433e36bf7e9eef.r2.dev/CasoPractico/rescate1.html"},
-        { "titulo": "Ingest 6: Chat atacante", "url": "https://gemini.google.com/gem/1tQA-_rpeKHHf1CgBI9Zo1ea1OpHCEBh9?usp=sharing"}
+        { "titulo": "Organigrama CoreSwift", "url": "https://pub-d38a173e4f434750bf433e36bf7e9eef.r2.dev/CasoPractico/OrganigramaCoreSwift.png" }
       ]
     },
-    {
-      "subseccion": "💾 Recursos",
-      "descripcion": "Recursos complementarios del escenario",
-      "enlaces": [
-        { "titulo": "Adjunto enviado por ByteHorizon CoreSwift", "url": "https://pub-d38a173e4f434750bf433e36bf7e9eef.r2.dev/CasoPractico/informe1.docx" },
-        { "titulo": "Organigrama CoreSwift", "url": "https://pub-d38a173e4f434750bf433e36bf7e9eef.r2.dev/CasoPractico/OrganigramaCoreSwift.png" },
-        { "titulo": "Instrucciones para chat", "url": "https://pub-d38a173e4f434750bf433e36bf7e9eef.r2.dev/CasoPractico/instruccioneschat.txt"},
-        { "titulo": "Conversaciones reales", "url": "https://ransomch.at/"} 
-      ]
-    },
-    {
-      "subseccion": "✅ Resolución",
-      "descripcion": "Un ejemplo de resolución por el profesor",
-      "enlaces": [
-        { "titulo": "Ejecicio 1: Respuesta a CoreSwift", "url": "https://pub-d38a173e4f434750bf433e36bf7e9eef.r2.dev/CasoPractico/Respuestas/respuesta1.html" },
-        { "titulo": "Ejecicio 1: Brief inicial a ByteHorizon", "url": "https://pub-d38a173e4f434750bf433e36bf7e9eef.r2.dev/CasoPractico/Respuestas/respuesta2.html" },
-        { "titulo": "Ejecicio 2: Respuesta a Juan Antonio", "url": "https://pub-d38a173e4f434750bf433e36bf7e9eef.r2.dev/CasoPractico/Respuestas/respuesta3.html" },
-        { "titulo": "Ejecicio 2: Brief a ByteHorizon", "url": "https://pub-d38a173e4f434750bf433e36bf7e9eef.r2.dev/CasoPractico/Respuestas/respuesta4.html" },
-        { "titulo": "Ejecicio 4: Ejemplo de chat", "url": "https://share.gemini.google/9e1qtsPzPjYj" }
-        
-      ]
+    "resolucion": {
+      "subseccion": "✅ Resolución (solo profesores)",
+      "descripcion": "Un ejemplo de resolución por el profesor. Contenido cifrado, requiere contraseña.",
+      "cifrado": {
+        "algoritmo": "AES-GCM",
+        "kdf": "PBKDF2-SHA256",
+        "iteraciones": 250000,
+        "salt": "iHJnC+Y2YunDulZcEZdRcA==",
+        "iv": "fF5rpZAHhjnS7feF",
+        "ciphertext": "25dGWUt/M+kH693OdS/fSalpFv7O3iFJJwNu3zsG7rGJ5JZXuxcTcWii9jr/xTymUQjuGgclR4f7nhoWQetGOIZl3lGSooNpwmGS5RNsBMGYDVzZN/4rLdROKm9XNaGx1Y2xEKN72pdbzbXoT/+hHRz7+m/A4NMELHlk5KsKrr3RtJxu4j6IhOi24xsS+QvP+foijzC2d1f87SshRLtAXZJCe/6OirYkKDMJudAHyt8nawgJMRvDUPIB9p3lPGxkgPDQ1VYR30Vn9xwWLGgROSb2hP/ljWP2/anIz87CJEa+bDpM6tSnJ9525WHGQEZQwLgbByvUFeyM8tKpA5IXKboP90TaZ08zUTT1htymusE6+tG+yzRFB0g+e7r/fVNPza3tCZNcG6wr/HJuHaKW+2AmH0nO+ougOc3hiY51d1GSSwwGTaRGu/EW6sOsEA0NVYyr4skI6WXF/iT3U+k8uXygOT9P8Hm861bOg+rPG4jx5DnNXOqBkWqa+lkdOdY56b/IfF99C1FjwUkSErMOmlhI1fRt7SkJiI+d5r7fDdE2+J5RyBiwK8+X+rzPOuo/rZx0VrggEZGJybKO9cKCOEYj6zlvXfeoWR4xhJHFUu1mzuhenZVkb5LlgJKIBnw8BPwTEWI9l4d4qnmSRntz1LIrdwnRy5DigqBkWzDNzjRufK08mD79Edlzet4amDDM6mAqp+YHYJHNpghDzK7D2cEmPP8X7FcH4vdTpJM1+c4NK5hSE1DjKIeuv9clCJpPlLZZnlGzPQGggjFoKMpEVeKdzLlxkDk7R3hp+6Im+PCu7vU9DbioRxdxIj689OQeue7NyEMAsXLaG9j8BmSTQ1UfinPIj0zKtrBcrIC/UqGrmbugY6LYUaLyJb86z9F27PuNxUQdqDXVAyOjAGlsOcYJdEAFwEqc88KuwPxqWuScP6I="
+      }
     }
-  ],
+  },
   "ctfs": [
     {
       "subseccion": "🕹️ Retos de la asignatura",
       "descripcion": "Los retos que hacemos durante la asignatura",
       "enlaces": [
-        { "titulo": "Analisis de logs", "url": "https://pub-d38a173e4f434750bf433e36bf7e9eef.r2.dev/CTFs/LogAnalysis01/CTFChecker-LogAnalysis01.html" },
+        { "titulo": "Análisis de logs", "url": "https://pub-d38a173e4f434750bf433e36bf7e9eef.r2.dev/CTFs/LogAnalysis01/CTFChecker-LogAnalysis01.html" },
         { "titulo": "Triaje Windows", "url": "https://pub-d38a173e4f434750bf433e36bf7e9eef.r2.dev/CTFs/Triaje01/CTFChecker-LaGranja.html" }
       ]
     },
@@ -58,14 +82,14 @@
       "descripcion": "Herramientas recomendadas",
       "enlaces": [
         { "titulo": "CyberChef", "url": "https://gchq.github.io/CyberChef/" },
-        { "titulo": "Draw IO", "url": "https://app.diagrams.net/" }
+        { "titulo": "Draw.io", "url": "https://app.diagrams.net/" }
       ]
     },
     {
       "subseccion": "🔍 A seguir",
       "descripcion": "Fuentes de información que seguir",
       "enlaces": [
-        { "titulo": "Lista twitter Alberto", "url": "https://x.com/i/lists/1777110376145924484" },
+        { "titulo": "Listado de interés Twitter", "url": "https://x.com/i/lists/1777110376145924484" },
         { "titulo": "This week in 4n6", "url": "https://thisweekin4n6.com/" },
         { "titulo": "DFIR Report", "url": "https://thedfirreport.com/reports/" }
       ]
