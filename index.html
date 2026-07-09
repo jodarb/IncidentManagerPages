@@ -380,28 +380,24 @@
         });
 
         // 2. CARGA DINÁMICA CON JERARQUÍA SIMPLIFICADA
+        const generarListaEnlaces = (enlaces) => enlaces.map(link => {
+            const listaAdjuntos = link.adjuntos ? `
+                <ul class="attachment-list">${link.adjuntos.map(adj =>
+                    `<li><a href="${adj.url}" target="_blank">${adj.titulo}</a></li>`
+                ).join('')}</ul>
+            ` : '';
+            return `<li><a href="${link.url}" target="_blank">${link.titulo}</a>${listaAdjuntos}</li>`;
+        }).join('');
+
         const generarTarjetasEnlaces = (subsecciones) => {
             if (!subsecciones) return '';
-            return subsecciones.map(sub => {
-                // Construir la lista de enlaces de esta subsección
-                const listaEnlaces = sub.enlaces.map(link => {
-                    const listaAdjuntos = link.adjuntos ? `
-                        <ul class="attachment-list">${link.adjuntos.map(adj =>
-                            `<li><a href="${adj.url}" target="_blank">${adj.titulo}</a></li>`
-                        ).join('')}</ul>
-                    ` : '';
-                    return `<li><a href="${link.url}" target="_blank">${link.titulo}</a>${listaAdjuntos}</li>`;
-                }).join('');
-
-                // Retornar la estructura de la tarjeta completa
-                return `
-                    <div class="card">
-                        <h3>${sub.subseccion}</h3>
-                        <p>${sub.descripcion}</p>
-                        <ul class="resource-list">${listaEnlaces}</ul>
-                    </div>
-                `;
-            }).join('');
+            return subsecciones.map(sub => `
+                <div class="card">
+                    <h3>${sub.subseccion}</h3>
+                    <p>${sub.descripcion}</p>
+                    <ul class="resource-list">${generarListaEnlaces(sub.enlaces)}</ul>
+                </div>
+            `).join('');
         };
 
         const generarSeccion = (containerId, subsecciones) => {
@@ -410,23 +406,34 @@
             contenedor.innerHTML = generarTarjetasEnlaces(subsecciones);
         };
 
-        // La Resolución no se pinta en texto plano: se muestra un formulario
-        // que descifra el contenido (AES-GCM/PBKDF2) en el navegador solo si
-        // la contraseña de profesor es correcta.
-        const generarTarjetaResolucion = (resolucion) => {
-            if (!resolucion) return '';
+        // Tarjeta bloqueada genérica: el contenido no se pinta en texto plano,
+        // se muestra un formulario que descifra (AES-GCM/PBKDF2) en el navegador
+        // solo si la contraseña introducida es correcta. Se usa tanto para
+        // escenarios bloqueados (tipo "enlaces") como para la Resolución
+        // (tipo "grupos", agrupada por ejercicio).
+        const generarTarjetaBloqueada = (sub, tipo) => {
+            const claseResultado = tipo === 'grupos' ? 'exercise-list' : 'resource-list';
             return `
                 <div class="card">
-                    <h3>${resolucion.subseccion}</h3>
-                    <p>${resolucion.descripcion}</p>
-                    <form class="unlock-form" data-cifrado='${JSON.stringify(resolucion.cifrado)}'>
-                        <input type="password" class="unlock-input" placeholder="Contraseña de profesor" autocomplete="off" required>
+                    <h3>${sub.subseccion}</h3>
+                    <p>${sub.descripcion}</p>
+                    <form class="unlock-form" data-tipo="${tipo}" data-cifrado='${JSON.stringify(sub.cifrado)}'>
+                        <input type="password" class="unlock-input" placeholder="Contraseña" autocomplete="off" required>
                         <button type="submit">Desbloquear</button>
                         <p class="unlock-error" hidden>Contraseña incorrecta.</p>
-                        <ul class="exercise-list unlock-result" hidden></ul>
+                        <ul class="${claseResultado} unlock-result" hidden></ul>
                     </form>
                 </div>
             `;
+        };
+
+        // Cada escenario se pinta abierto si tiene "enlaces" en claro,
+        // o bloqueado tras contraseña si tiene "cifrado".
+        const generarTarjetasEscenarios = (escenarios) => {
+            if (!escenarios) return '';
+            return escenarios.map(esc =>
+                esc.cifrado ? generarTarjetaBloqueada(esc, 'enlaces') : generarTarjetasEnlaces([esc])
+            ).join('');
         };
 
         const base64ToBytes = (b64) => {
@@ -436,7 +443,7 @@
             return bytes;
         };
 
-        const descifrarResolucion = async (cifrado, password) => {
+        const descifrarBloque = async (cifrado, password) => {
             const salt = base64ToBytes(cifrado.salt);
             const iv = base64ToBytes(cifrado.iv);
             const ciphertext = base64ToBytes(cifrado.ciphertext);
@@ -455,35 +462,36 @@
             return JSON.parse(new TextDecoder().decode(plaintext));
         };
 
-        const configurarDesbloqueoResolucion = () => {
-            const form = document.querySelector('.unlock-form');
-            if (!form) return;
-            const cifrado = JSON.parse(form.dataset.cifrado);
+        const configurarFormulariosDesbloqueo = () => {
+            document.querySelectorAll('.unlock-form').forEach(form => {
+                const cifrado = JSON.parse(form.dataset.cifrado);
+                const tipo = form.dataset.tipo;
 
-            form.addEventListener('submit', async (e) => {
-                e.preventDefault();
-                const input = form.querySelector('.unlock-input');
-                const errorMsg = form.querySelector('.unlock-error');
-                const resultado = form.querySelector('.unlock-result');
-                const boton = form.querySelector('button');
-                errorMsg.hidden = true;
+                form.addEventListener('submit', async (e) => {
+                    e.preventDefault();
+                    const input = form.querySelector('.unlock-input');
+                    const errorMsg = form.querySelector('.unlock-error');
+                    const resultado = form.querySelector('.unlock-result');
+                    const boton = form.querySelector('button');
+                    errorMsg.hidden = true;
 
-                try {
-                    const grupos = await descifrarResolucion(cifrado, input.value);
-                    resultado.innerHTML = grupos.map(grupo => `
-                        <li>
-                            <h4>${grupo.ejercicio}</h4>
-                            <ul class="resource-list">${grupo.enlaces.map(link =>
-                                `<li><a href="${link.url}" target="_blank">${link.titulo}</a></li>`
-                            ).join('')}</ul>
-                        </li>
-                    `).join('');
-                    resultado.hidden = false;
-                    input.hidden = true;
-                    boton.hidden = true;
-                } catch (err) {
-                    errorMsg.hidden = false;
-                }
+                    try {
+                        const contenido = await descifrarBloque(cifrado, input.value);
+                        resultado.innerHTML = tipo === 'grupos'
+                            ? contenido.map(grupo => `
+                                <li>
+                                    <h4>${grupo.ejercicio}</h4>
+                                    <ul class="resource-list">${generarListaEnlaces(grupo.enlaces)}</ul>
+                                </li>
+                            `).join('')
+                            : generarListaEnlaces(contenido);
+                        resultado.hidden = false;
+                        input.hidden = true;
+                        boton.hidden = true;
+                    } catch (err) {
+                        errorMsg.hidden = false;
+                    }
+                });
             });
         };
 
@@ -494,16 +502,16 @@
                 const contenedorCaso = document.getElementById('grid-caso-practico');
                 if (contenedorCaso) {
                     contenedorCaso.innerHTML =
-                        generarTarjetasEnlaces(casoPractico.escenarios) +
+                        generarTarjetasEscenarios(casoPractico.escenarios) +
                         generarTarjetasEnlaces([casoPractico.recursos_generales].filter(Boolean)) +
-                        generarTarjetaResolucion(casoPractico.resolucion);
+                        (casoPractico.resolucion ? generarTarjetaBloqueada(casoPractico.resolucion, 'grupos') : '');
                 }
 
                 // Renderizar el resto de secciones de la web
                 generarSeccion('grid-ctfs', data.ctfs);
                 generarSeccion('grid-recursos-utiles', data.recursos_utiles);
 
-                configurarDesbloqueoResolucion();
+                configurarFormulariosDesbloqueo();
             })
             .catch(err => console.error("Error al procesar recursos.json:", err));
     </script>

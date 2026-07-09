@@ -19,29 +19,41 @@
       {
         "numero": 2,
         "subseccion": "📝 Escenario 2: Sesión inicial",
-        "descripcion": "Inputs y contexto de este escenario",
-        "enlaces": [
-          { "titulo": "Ingest 3: Datos post sesión", "url": "https://pub-d38a173e4f434750bf433e36bf7e9eef.r2.dev/CasoPractico/email3.html" }
-        ]
+        "descripcion": "Introduce la contraseña de este escenario para desbloquear sus inputs",
+        "cifrado": {
+          "algoritmo": "AES-GCM",
+          "kdf": "PBKDF2-SHA256",
+          "iteraciones": 250000,
+          "salt": "Eqy64720klnnPDZ6gcdZpQ==",
+          "iv": "cQ+5DDm8HAyoEWpq",
+          "ciphertext": "FjUaQX5J3bpuFV1qfo1ZUVZDIdt4Zn9f578DNkFL3Ow52Rqv5pdgtXOHfx90fQg0mo+agR0zLg38gy+pirmneN1iNrIY1fQNgJTtv/ssEFd40e5p1j95st0ujsXg9wUiyevhhi6PO8N70U2GF7N48NvMllUr12qvYuUiiWAHSCykDxmEPVhxvt5rEjvjWbG4"
+        }
       },
       {
         "numero": 3,
-        "subseccion": "📝 Escenario 3: Forense y rescate",
-        "descripcion": "Inputs y contexto de este escenario",
-        "enlaces": [
-          { "titulo": "Ingest 4: Email de equipo forense", "url": "https://pub-d38a173e4f434750bf433e36bf7e9eef.r2.dev/CasoPractico/email4.html" },
-          { "titulo": "Ingest 5: Email de rescate", "url": "https://pub-d38a173e4f434750bf433e36bf7e9eef.r2.dev/CasoPractico/rescate1.html" }
-        ]
+        "subseccion": "📝 Escenario 3: Forense",
+        "descripcion": "Introduce la contraseña de este escenario para desbloquear sus inputs",
+        "cifrado": {
+          "algoritmo": "AES-GCM",
+          "kdf": "PBKDF2-SHA256",
+          "iteraciones": 250000,
+          "salt": "RGVp82mOtJm+Y2i5flIhgg==",
+          "iv": "tBo6PIIYQgVky1Ki",
+          "ciphertext": "wJN3Y94TNqZfeBuQMl9fTqFbbNcy6O6DdqYIapYcOKr4laBeK/iBqgM8dgURkK1J4Q4CxPEdlyae3UAwZ7F8qOVNTqcKBtZ/cFAA1u4wYftfp31x0grf3kA/LNKE4cmHawUKMUekKOoG+SzAT0M5TswdTq8uijKSQpcE5Aq5OEQdzzzstcZpx+Bx3qixa2ENxwROckY="
+        }
       },
       {
         "numero": 4,
         "subseccion": "📝 Escenario 4: Chat con el atacante",
-        "descripcion": "Inputs y contexto de este escenario",
-        "enlaces": [
-          { "titulo": "Ingest 6: Chat atacante", "url": "https://gemini.google.com/gem/1tQA-_rpeKHHf1CgBI9Zo1ea1OpHCEBh9?usp=sharing" },
-          { "titulo": "Instrucciones para chat", "url": "https://pub-d38a173e4f434750bf433e36bf7e9eef.r2.dev/CasoPractico/instruccioneschat.txt" },
-          { "titulo": "Conversaciones reales", "url": "https://ransomch.at/" }
-        ]
+        "descripcion": "Introduce la contraseña de este escenario para desbloquear sus inputs",
+        "cifrado": {
+          "algoritmo": "AES-GCM",
+          "kdf": "PBKDF2-SHA256",
+          "iteraciones": 250000,
+          "salt": "NYARu987cKZQqUzl9wFSNA==",
+          "iv": "1nKmB0qDJyCbIBlw",
+          "ciphertext": "FQXdH4t6jLM/zzEcWTqSwrFeTebfC2/1/iF3g0LvKjheBs9wVJc2kZADR+SpmyATuxXfYrBtAujQAtQybRH/H/ZEBfiDe2QMxIh061nht3YSm2Y9f9rf8Cl9LAL33l28EPZ+zMLD8fj80z7dtqfP7j6YZxHDzQsgzi7PFXKrLRcxzIuSJNrKGJesI49rKbTEHmxYDfIvnT327kbpb0p6ikdTMHS7W9qaip0WCj7mB3DentXe/so7J4CLqgtHMO9AHTE3dNW3z7MsYGqZKf/FApN99c/IN3eDvRknL5vaoKUfSFRO3t8Z0nTVar7pm6aVZAOFiezrUxadmTuBZ81JjXhOCe9GH/5Bu6oGc2xUTYhd21NMwa0V4tC+3yo96rIQp5cfhvzl2YicAZItkQGIOSwtxN8gGkLqrXloDPTS2l4J6Jd0pcREvuGZo2olpVHdgKWTF7MuRdvxUubONFAyBjAbE3NR/i2drTsPE9L41Dp6lN7dq+j7ZB437ZxZwj2nw2dbDFOdJT/ZG8Kn3NIrLGNMvIEecQmImmmXAxHt5oYwenKpBcPMag6KHMbyT+SMB2v1IX56ci6cExy8Hf+qoehIjp8VrZ+DrqKQ/6k="
+        }
       }
     ],
     "recursos_generales": {
@@ -58,9 +70,9 @@
         "algoritmo": "AES-GCM",
         "kdf": "PBKDF2-SHA256",
         "iteraciones": 250000,
-        "salt": "QbIWy/1Kb3Isy4U6UqWJhw==",
-        "iv": "5vH3xM9YcM+XUlyQ",
-        "ciphertext": "Hf+d31GKQPqMR3vOH3kw6XWiA4TTubk9+S0TRFwTB7EMPCxD4YSeYpx5ayQ6Hj7flg7zpv6PLs8a3oHjmHYx8RQ+czgoqr3KBtkDprzRNzpjPQvj/UXkdFDr72Wr4+Qp0sDRRrg++TVrN5oZwtAUwflrx9iheyN77iEBmnxj/S0d8DSx3L0aTQuT/3Pgr5wQJOGI3LaSJN9U90MNMWuLXcb4rUSUos4gnTWL55fYTUna48NDmONi7F5lHqUacEgk5dne/0Uj7tE+fmXY/Fkd08kvSKfYLSvcThfnxqYEoEOn53HNUuggd1Obf1OcMzP2CYkojiXGNiRBWCs/B9qP4n7B1e7R231uSDKGgMNUpdFV4NwOsjsbF6mRj5K+c+OCboKTdeBgBdS6EGt+OE/Vm+m/TQLRL6jWhMGK8ZavBMg0fwwWH7/Vuav6StLq5mKurBn9beUf0HuNNpUNLbiI1dCqitkg8V0CLLJ3+Sz6xUqaqhg9CBcvsaMBxgAVz5PAPhaz4js2UTlmxm5gC3YLA31PajShL6x3u6cLny1HwXbPF/A2o7WreULWWpqymBWFy9W34V7rocIgFbyYbyXcbY6oARc4A+QPg4Zm573G2wiM/95llvRAB0xBTD32fccNiPxyK+VrlfW/LFM0yB4DSoB0A4p0UY+m2rLHr6GHWRGhyXDlsrtY6BjJRXwluufes3RM7R3tutaQuP0HbryUHaK060e+IGzOoSWQQXRROKUGlIkXOdBbtosV5UecfZLacw8sp5qrRt9fXQzbpNxdjB5Aj/991e3mk2avHDqeDAs7Eq+l4Cj2IS3MfFU5g8GGdSUPqIx8Gt+lwk3KWrvonuSfBVEBixE6sXa/mlrr2wuoRGTGP178vfNy62cMdcKhL0dogRHwbJGU32npwsq3NS4qh7egbtR1qBDcpIremJ3uYcYu1VRzFMggQakZ4C51zcK8TO41EuBYnfHiNVvWknDBDHOeW5WLPsRiXBw0aWYX/i1FRoCqdhKC"
+        "salt": "cbqvKuq0vB6xQpeTZDk5wA==",
+        "iv": "aUZrNrca3dU+ebLC",
+        "ciphertext": "v76GR/Vy1gn1K2RIAuoTXmAlCOEtfqx4GLZ6UUoI5pwNGqJCiztzkaAbgxdHRqxCyGcf8i0PpVx9i7fyQGF6Eu9pbEWLlY9QxcCTfnBatnXGYQn/Mkl2MgNmA0SWnyIQ9A4x8ZK3qVVo1McpDGDBzQoasTl66TkU2thRwt9G58PC7016ZZWZWunv8scR23eeMIkZ2EcOJ8OZw+4vN2aQraMmO+1up1/6RP/HbdWe5nXEXgdFQFGXNQ2pv6y17ulLVcZ4ldMRB1G1pYGbphb3DwkGZXLD+3qgRd0U005TFTKKDlub7K8UDg2t6TzPPURngvFh6wWleHP8sJ+kIia4xiJuLJM/TlG0zjING7p/Cvxr8zMncS6tCfuN6JFD4P1XUSYKR+1aJb8H4v08BmKwcCHnTi0+sLMPMpSaIS3fdr8U/eamzFfZ5s/5WAQDc8dIk6sQd/wxv1OrMvCAYE/QKG6ormWRCGGrPB+gtU5lrj1tl4lYFgkhZ0a2PfwGFkKaPgHdYI6Y8tPGCcv5wVWHIq4gWafzx7icqHFzEV5sZbtL5gFS5LNa2OzTHJYIK1buVVreZcRV9bffaPeL2UFohMQs4Td2QnEZFqiXNE+OzzxQdqO23nzixJKf9Xi3R+0fNM/ZylSQN4jvnp7FYf3niqzHFQNQAQSmyzdTRVwOGEwc1cqjvX7UACfCyHJnACdaGGkuoIEVELo5Vt3sf4E+jZmMArYx7qCiAk8yBVdi2kbSOjPqwZH52XUW+vonZ9RCqdN3+nNgvXem9LJA86z6yFSfgwpod4HUBP+aF4KEUz2bSHAeoUhv0TU87GaMF6HoKOgvE3b7RvFWcr0q5j4JY1eX/d9KGSUTU1FU+hcxfdyLVNXqqkkUijPZrSQ2acuEQMmQTJp2AqXa1mEmY5MHe3zd9YLefKSHVcS5/lC99IkWWW2ElvAW4PaK80c5bXkux5UdIHbr2lUmKlvfUyo5V/m2GEzR1eXv/FaRlWSgo2GXF/lvIfTerP7AZKFhJvNP7ykK96oOpJIkCaDz5pMCt0cRCCmM87UQDPUxrAL/KKK3IA3xoQ5olkW+7S7rx4C2dKRQKxD9QMjEPHQN0fWg/sYHoCOGoJarrQbV6GSCDGXekAJZhiJQSPuHENRF+JPJXyglyxLipO0zYNOknbP/+LyBCBZpnfjeELc0Fuy/CZfBI1eXxaeLFIB1DJ/8ugKN9zoE"
       }
     }
   },
